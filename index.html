@@ -1,9 +1,278 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title>Devansh Upadhyay</title>
+
+  <meta name="author" content="Portfolio Website"> 
+  <meta  content="Comporessed Images for quick loading" >
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+    
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+  <link rel="stylesheet" href="./style.css">
+  <script type="text/javascript" src="./acc.js"></script>
 </head>
 <body>
-<h2> Hello World </h2>
+  <div style="display:flex; width : 100%; background-color:black;">
+    <div class="navbar-wrapper" id="nav">
+      <div class="navbar-main">
+        <div class="element" id="brief-info">
+          <div class="image" id="head-image">
+            <img src="./header.jpg" alt="Image">
+          </div>
+          <div class="head-text">
+            <span class="brand-name">
+              DEVANSH &nbsp; UPADHYAY
+            </span>
+
+            <span class="extras">
+              Student & Tech Enthusiast
+            </span>
+          </div>
+        </div>
+        <div class="element menu">
+          <span class="child " id='home' onclick="scrollToElement(document.getElementById('home-container'))">
+            HOME
+          </span>
+          <span class="child" id="project" onclick="scrollToElement(document.getElementById('project-container'))">
+           <a href="#project-container">PROJECTS</a> 
+          </span>
+          <span class="child" id="contact" onclick="scrollToElement(document.getElementById('contact-container'))">
+            <a href="#contact-container"> CONTACT </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-container" id='home-container'>
+    <div class="content">
+      <span class="salutation" id="salutation-text">
+        &nbsp; Hey There !!
+      </span>
+      <div class="brief">
+        <span class="text" id="main-inf">
+          I'm Devansh Upadhyay, a 19-year old student and soon to be a Computer Engineer from Shri Vaishnav Institute of Technology
+          and Science , Indore.
+        </span>
+      </div>
+    </div>
+    <div class="salutation skill-set" id="skills">
+      &nbsp; SkillSet
+    </div>
+    <div class="skill-wrapper" id="skill-wrap">
+
+      <div class="row">
+        <div class="skill">
+          <i class="fab fa-java fa-3x"></i> &nbsp; Java
+          <div class="scale">
+            <div class="rate" id="java"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <i class="fab fa-python fa-2x"></i> &nbsp; Python3
+          <div class="scale">
+            <div class="rate" id="python"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="skill">
+          <i class="fab fa-angular fa-2x"></i> &nbsp; Angular2
+          <div class="scale">
+            <div class="rate" id="ng"></div>
+          </div>
+        </div>
+        <div class="skill">
+          .NET (Core)
+          <div class="scale">
+            <div class="rate" id="dotnet"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="skill">
+          <i class="fab fa-html5 fa-lg"></i> &nbsp; HTML5
+          <div class="scale">
+            <div class="rate" id="html"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <i class="fab fa-css3 fa-lg"></i> &nbsp; CSS3
+          <div class="scale">
+            <div class="rate" id="css"></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="skill">
+          <img src="./sql.svg"></img> &nbsp; SQL Server
+          <div class="scale">
+            <div class="rate" id="sql-server"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <img src="./django.svg" style="width:2rem ; height:2rem ;" ></img> &nbsp; Django
+          <div class="scale">
+            <div class="rate" id="django"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container" id="project-container">
+    <div class="salutation" id="sal-project">
+      <center> Projects </center>
+    </div>
+    <div class="projects">
+
+      <div class="card" onmouseenter="showLink(this)" onmousemove="showLink(this)" onmouseout="hideLink(this)">
+        <div class="project">
+          <div class="heading">
+            Maps @thepolitics.in
+          </div>
+          <div class="image">
+            <img src="./maps.jpg" alt="Maps">
+          </div>
+          <div class="description">
+            One of the Projects I had during my Internship &nbsp; @ thepolitics.in .&nbsp; Used the D3.JS library for rendering maps and
+            Angular2 . Learned a lot. Special Thanx to my Mentor..
+          </div>
+          <div class="ln-wrapper">
+            <div class="code-link" onclick="routeToPolitics('maps')">
+              <i class="fas fa-reply fa-lg"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" onmouseenter="showLink(this)" onmousemove="showLink(this)" onmouseout="hideLink(this)">
+        <div class="project">
+          <div class="heading">
+            SMIIP @thepolitics.in
+          </div>
+          <div class="image">
+            <img src="./smiip.jpg" alt="Maps">
+          </div>
+          <div class="description">
+            Social Media Intelligence Index for Politicians Another Project by @thepolitics.in to which I contributed . Developed the
+            Scrapper . Special Thanx to my Mentor for helping..
+          </div>
+          <div class="ln-wrapper">
+            <div class="code-link" onclick="routeToPolitics('social-media')">
+              <i class="fas fa-reply fa-lg"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" onmouseenter="showLink(this)" onmousemove="showLink(this)" onmouseout="hideLink(this)">
+        <div class="project">
+          <div class="heading">
+            Portfolio
+          </div>
+          <div class="image">
+            <img src="./portfolio.png" alt="Portfolio">
+          </div>
+          <div class="description">
+            This is one of my Projects that I did as a hands on practice of HTML, CSS and Javascript. Liked this portfolio ?? You can use it as a
+            template too , just leave a Star on the Github repo.
+          </div>
+          <div class="ln-wrapper">
+            <div class="code-link" onclick="routeToRepo('Portfolio')">
+              <i class="fas fa-reply fa-lg"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onmouseenter="showLink(this)" onmousemove="showLink(this)" onmouseout="hideLink(this)">
+        <div class="project">
+          <div class="heading">
+            TextEdit
+          </div>
+          <div class="image">
+            <img src="./editor.png" alt="Text Editor">
+          </div>
+          <div class="description">
+            A utility text editor. You can open files , add new files , modify existing files and many more utilities within the Editor.
+            And the best part?? You can view the code and modify it for your use..
+          </div>
+          <div class="ln-wrapper">
+            <div class="code-link" onclick="routeToRepo('TextEdit')">
+              <i class="fas fa-reply fa-lg"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" onmouseenter="showLink(this)" onmousemove="showLink(this)" onmouseout="hideLink(this)">
+        <div class="project">
+          <div class="heading">
+            InstaView
+          </div>
+          <div class="image">
+            <img src="./InstaView.jpg" alt="InstaView">
+          </div>
+          <div class="description">
+            Want to view someone's profile image from Instagram ?? This is a Console Application written in .NET Core to fetch the Profile
+            Image of the user in full resolution.
+          </div>
+          <div class="ln-wrapper">
+            <div class="code-link" onclick="routeToRepo('InstaViewCS')">
+              <i class="fas fa-reply fa-lg"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" onmouseenter="showLink(this)" onmousemove="showLink(this)" onmouseout="hideLink(this)">
+        <div class="project">
+          <div class="heading">
+            The Minor Project &nbsp;
+            <strong>EQ</strong>
+          </div>
+          <div class="image">
+            <img src="./minor.jpg" alt="Maps">
+          </div>
+          <div class="description">
+            The digital Queue Management System that I developed as the Minor Project with my teammates. Used the Django Framework and
+            Sql Database .
+          </div>
+          <div class="ln-wrapper">
+            <div class="code-link" onclick="routeToRepo('eq')">
+              <i class="fas fa-reply fa-lg"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="extra" id="many-more">
+      <h4>And Many More....</h4>
+    </div>
+  </div>
+
+
+  <div class="contact-containerl" id="contact-container">
+      <div class="salutation" id="sal-contact">
+        <center> Contact Me  </center>
+      </div>
+      <div class="accounts">
+        <div class="account" onclick="routeToFacebook()">
+          <i class="fab fa-facebook-f fa-2x"></i>
+        </div>
+        <div class="account" onclick="routeToInstagram()">
+          <i class="fab fa-instagram fa-2x"></i>
+        </div>
+        <div class="account" onclick="routeToLinkedIn()">
+          <i class="fab fa-linkedin-in fa-2x"></i>
+        </div>
+        <div class="account" onclick="routeToGithub()">
+          <i class="fab fa-github fa-2x"></i>
+        </div>
+        <div class="account" onclick="openMail()">
+          <i class="fas fa-envelope fa-2x"></i>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
