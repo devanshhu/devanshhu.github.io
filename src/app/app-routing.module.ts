@@ -5,16 +5,16 @@ import { AboutComponent } from "./about/about.component";
 import { TechnologiesComponent } from "./technologies/technologies.component";
 const routes: Routes = [
   {
-    path:'',
-    component : AboutComponent
+    path: '',
+    component: AboutComponent
   },
   {
-    path : 'projects',
-    component : TechnologiesComponent
+    path: 'chandrayan',
+    component: TechnologiesComponent
   },
   {
-    path : '**',
-    redirectTo : '/'
+    path: '**',
+    redirectTo: '/'
   }
 
 ];

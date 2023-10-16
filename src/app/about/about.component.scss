@@ -1,16 +1,18 @@
-.about-height{
-	height: 80vh;
+.about-height {
+	height: 72vh;
 }
 
-.progress{
-	width : 0vw;
-	transition : width 1s ease;
+.progress {
+	width: 0vw;
+	transition: width 1s ease;
 }
-.typewriter{
-animation: blinker 1s infinite;
+
+.typewriter {
+	animation: blinker 1s infinite;
 }
+
 @keyframes blinker {
-60% {
-opacity: 0;
-}
+	60% {
+		opacity: 0;
+	}
 }

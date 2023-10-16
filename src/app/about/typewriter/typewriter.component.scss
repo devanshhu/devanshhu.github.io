@@ -1,0 +1,24 @@
+:host{
+    // display: flex;
+    // width: 0.4em;
+    // height : 100%;
+    // background-color: white;
+
+
+    letter-spacing: -0.34em;
+    animation: 1.4s infinite animate;
+    color: white;
+    
+}
+
+@keyframes animate {
+    0%{
+        opacity : 0
+    }
+    50%{
+        opacity : 1;
+    }
+    100%{
+        opacity : 0;
+    }
+}

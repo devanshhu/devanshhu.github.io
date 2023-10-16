@@ -8,6 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
 import { ContactComponent } from './contact/contact.component';
+import { SkillSetComponent } from './skill-set/skill-set.component';
+import { LaptopMapComponent } from './skill-set/laptop-map/laptop-map.component';
+import { BrainComponentComponent } from './about/brain-component/brain-component.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { ContactComponent } from './contact/contact.component';
     HeaderComponent,
     AboutComponent,
     TechnologiesComponent,
-    ContactComponent
+    ContactComponent,
+    SkillSetComponent,
+    LaptopMapComponent,
+    BrainComponentComponent
   ],
   imports: [
     BrowserModule,

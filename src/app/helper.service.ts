@@ -4,9 +4,9 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class HelperService {
-  public isHomeVisited : boolean = false;
-  public isLightTheme : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
-  public isMobile:boolean = false;
+  public isHomeVisited: boolean = false;
+  public isLightTheme: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public isMobile: boolean = false;
   constructor() { }
 
 }

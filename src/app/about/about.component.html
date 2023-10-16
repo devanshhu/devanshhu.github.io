@@ -1,17 +1,16 @@
-<div class=" w-full about pt-20 md:pt-5 mx-auto mt-4 flex flex-col md:flex-row">
-	<div class="w-full md:w-1/2 h-96 border-b-lg flex flex-col items-start justify-start" >
-		<div class="header w-full md:w-1/2 h-20 text-red-500 pl-4 md:pl-16 font-bold text-4xl tracking-wider">
+<div class=" w-4/5 about pt-20 md:pt-5 mx-auto mt-4 flex flex-row md:flex-row pt-64">
+	<!-- <div class="w-full md:w-full h-96 border-b-lg flex flex-row items-start justify-start" > -->
+		<!-- <div class="header w-full md:w-1/2 h-20 text-red-500 pl-4 md:pl-16 font-bold text-4xl tracking-wider">
 			Hey There !!
 		</div>
 		<div class="content pl-4 pr-4 md:pl-16 w-full text-black dark:text-white text-xl tracking-wide text-justify dark:text-gray-50">
 			{{ introduction }} <span class="text-xl typewriter" *ngIf="showBlinker">|</span> 
 		</div>
-		<br>
+		<br> -->
 		<!-- <div class="content pl-4 pr-4 md:pl-16 w-full text-black text-xl tracking wide text-justify dark:text-gray-50">
 			{{academic}}<span class="text-3xl typewriter" *ngIf="showBlinker">|</span>   
 		</div> -->
-
-		<div class="w-full contact mt-8 pl-4 pr-4 md:pl-16 hidden md:flex md:flex-col">
+		<!-- <div class="w-full contact mt-8 pl-4 pr-4 md:pl-16 hidden md:flex md:flex-col">
 			<div class="w-full text-2xl text-red-500 font-bold dark:text-gray-50 " *ngIf="contactVias && contactVias.length > 0">
 				Contact Me
 			</div>
@@ -23,23 +22,24 @@
 				</span>
 			</div>
 
-		</div>
+		</div> -->
 
 
-	</div>
-	<div class="w-full md:w-1/2 skills pl-4 border-l-3 border-gray-100 mt-12 md:mt-0 ">
-		<section class="h-full pr-4">
-			<div class="text-2xl text-red-500 font-bold dark:text-white tracking-wider mb-6" *ngIf="skillSet && skillSet.length > 0">
+	<!-- </div> -->
+
+	<!-- Education Column -->
+	
+	<section class="w-1/5 skills border-l-3 border-gray-100 mt-12 md:mt-0 mx-auto">
+		<div class="h-full pr-4 flex flex-col align-center">
+			<div class="text-4xl text-red-500 font-bold dark:text-white tracking-wider mb-6" *ngIf="skillSet && skillSet.length > 0">
 				Education
 			</div>
 
-			<div @appearFromBottom *ngFor=" let skill of skillSet;let even = even; let odd = odd;" class="card w-96 h-24 bg-gray-700 md:bg-gray-50 dark:bg-gray-800 shadow-xl rounded-lg flex flex-col border-b-4 mb-10"
-			[ngClass]="['border-' + skill.colorName, odd ? 'md:float-right':'']"
+			<div @appearFromBottom *ngFor=" let skill of skillSet;let even = even; let odd = odd;" class="card w-96 h-24 bg-gray-700 md:bg-gray-50 dark:bg-gray-800 shadow-xl rounded-lg flex align-center flex-col border-b-4 mb-10"
+			[ngClass]="['border-' + skill.colorName, odd ? 'md:float-right':'']" 
 			>
-				<div class="row flex">
-					<!-- <span class="w-10 pl-4">
-						<img class="w-6 h-10" [attr.src]="'assets/skill-icons/'+skill.assetName">
-					</span> -->
+				<div class="row flex align-center">
+					
 					<span class="font-bold text-white md:text-black dark:text-white pt-2 pl-4">
 						{{ skill.name }}
 					</span>
@@ -54,10 +54,10 @@
 					</div>
 				</div>
 				</div>
-			</section>
-		</div>	
-
-<div class="w-full contact mt-8 pl-4 pr-4 mb-8 md:pl-16 flex flex-col md:hidden">
+			</div>
+		</section>	
+	
+<!-- <div class="w-full contact mt-8 pl-4 pr-4 mb-8 md:pl-16 flex flex-col md:hidden">
 			<div class="w-full text-2xl text-red-500 font-bold dark:text-gray-50 " *ngIf="contactVias && contactVias.length > 0">
 				Contact Me
 			</div>
@@ -70,4 +70,6 @@
 			</div>
 
 		</div>
-	</div>
+	</div> -->
+
+	<app-brain-component class="w-4/5"></app-brain-component>

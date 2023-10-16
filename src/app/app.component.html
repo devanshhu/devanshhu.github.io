@@ -1,13 +1,18 @@
-<div [ngClass]="lightTheme ? '' : 'dark'">
-	
-<div class="h-full md:h-screen w-screen bg-cover bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 dark:bg-gradient-to-r dark:from-gray-700 dark:via-gray-900 dark:to-black"> 
-	<app-header (navigateTo)="navigateToPage($event)"></app-header>
-	<div >
-		<!-- <app-about ></app-about> -->
-		<router-outlet></router-outlet>
+<div class=" bg-cover bg-gradient-to-r from-red-100 via-green-100 to-blue-100 dark:bg-gradient-to-r dark:from-gray-700 dark:via-gray-900 dark:to-black" >
+<div class=" md:h-full w-full"  > 
+	<app-header class=" mt-0 pt-0 w-full top-0 " (navigateTo)="navigateToPage($event)"></app-header>
+</div>
+<div >
+
+	<app-about ></app-about>
+	<section 
+	class="skills-section">
+	<app-skill-set 
+	*ngIf="showSkillset"
+		></app-skill-set>
+	</section>
 	</div>
-<!-- 	<div >
-		<app-projects></app-projects>
-	</div> -->
+	<!-- <router-outlet></router-outlet> -->
+
 </div>
-</div>
+

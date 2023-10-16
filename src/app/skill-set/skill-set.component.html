@@ -1,0 +1,43 @@
+<div class="flex flex-col w-full">
+    <div class="text-4xl text-red-500 dark:text-white pl-6 ml-6 mb-24">
+        Side Projects ? Here you go !
+    </div>
+<section *ngFor="let skill of skillsets;let index = index; let odd =odd" class=" flex flex-row pb-48" >
+    <div class="flex justify-around w-11/12" [ngClass]="odd ? 'flex-row' : 'flex-row-reverse'">
+        <div [id]="'container' + index" class="flex items-center justify-center shadow-2xl shadow-inner">
+            <div class="rounded-md shadow-2xl">
+                <img [src]="skill.config.imgUrl" class="card rounded-md">
+            </div>
+        </div>
+        
+        <!-- <app-laptop-map [containerElement]="'container' + index"  [mapConfig]="skill.config">
+        </app-laptop-map> -->
+        <div class="flex flex-col justify-center w-96"  >
+            
+            <div class="text-gray-900 text-2xl dark:text-white"> 
+                {{ skill.title }}
+            </div>
+            <div class="text-gray-600 text-xl dark:text-gray-200 pt-4 pl-6 flex flex-col">
+                {{skill.description}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="w-full contact mb-16 pl-4 pr-4 md:pl-16 md:flex md:flex-col">
+    <div class="w-full text-4xl text-red-500 font-bold dark:text-gray-50 " *ngIf="contactVias && contactVias.length > 0">
+        Contact Me
+    </div>
+    <div class="flex mt-2 ml-2 md:ml-4 md:mt-8 flex-wrap">
+        <span *ngFor="let contact of contactVias" class="cursor-pointer mr-16 md:mr-12">
+            <a [attr.href]="contact.url">
+            <img class=" h-10 w-10 "[attr.src]="'assets/contact/' + contact.name + ('') + '.svg'">
+        </a>
+        </span>
+    </div>
+
+</div>
+
+
+
+</div>
