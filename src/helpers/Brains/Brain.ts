@@ -23,9 +23,11 @@ export class Wireframe {
     oldX: any = window.innerWidth / 2;
     oldY: any = window.innerHeight / 2;
     brainGroup: any = new THREE.Group();
+    appService: HelperService;
     constructor(htmlElement: any, wireframeData: any, appService: HelperService) {
         this.htmlElement = htmlElement;
         this.wireframeData = wireframeData;
+        this.appService = appService;
         this.addRenderer();
         this.addCamera();
         this.render();
@@ -55,6 +57,9 @@ export class Wireframe {
         this.width = this.htmlElement.clientWidth;
         this.height = this.htmlElement.clientHeight || 780;
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        if (this.appService.isMobile) {
+            this.height = this.width;
+        }
         this.renderer.setSize(this.width, this.height);
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.htmlElement.appendChild(this.renderer.domElement);
@@ -69,7 +74,7 @@ export class Wireframe {
         );
         this.camera.position.set(0, 0.01, 0.36);
         this.camera.rotation.x = -0.3;
-        this.camera.rotation.y = 0.3;
+        this.camera.rotation.y = this.appService.isMobile ? 0 : 0.3;
         (window as any).c = this.camera.rotation;
         // this.addOrbitControls();
         // this.controls.update();

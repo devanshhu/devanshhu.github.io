@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { trigger, style, animate, transition } from '@angular/animations';
 
-import { interval, timer, Observable } from 'rxjs';
+import { interval, } from 'rxjs';
 import { take, tap, switchMap } from 'rxjs/operators';
 
 import { HelperService } from '../helper.service';
@@ -39,17 +39,18 @@ export class AboutComponent implements OnInit {
   public academicText: string = '';
   public introduction: string = '';
   public academic: string = '';
-  public textEmitInterval: number = 1;
+  public textEmitInterval: number = 0;
   public showBlinker: boolean = false;
   public skillsArray: Array<{ [key: string]: string | number }> = [];
   public skillSet: Array<{ [key: string]: string | number }> = [];
   public contactsList: Array<{ [key: string]: string | number }> = [];
   public contactVias: Array<{ [key: string]: string | number }> = [];
   public lightTheme: boolean = true;
+  public isMobile: boolean = false;
   constructor(private _helper: HelperService) { }
 
   ngOnInit(): void {
-
+    this.isMobile = this._helper.isMobile;
     this._helper.isLightTheme.subscribe((isLight: boolean) => {
       this.lightTheme = isLight;
     });
@@ -143,7 +144,7 @@ export class AboutComponent implements OnInit {
 
   private populateSkillSet() {
 
-    return interval(500).pipe(
+    return interval(this.isMobile ? 0 : 500).pipe(
       take(3),
       tap((i) => this.skillSet[i] = this.skillsArray[i])
     );

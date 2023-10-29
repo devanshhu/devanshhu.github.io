@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { interval } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
+import { HelperService } from '../helper.service';
 
 @Component({
   selector: 'app-skill-set',
@@ -102,11 +103,15 @@ export class SkillSetComponent implements OnInit {
     }
   ];
   contactVias: any = [];
-  contactsList: { name: string; url: string; }[] = [];
+  contactsList: { name: string; url: string; isDarkLogo?: boolean }[] = [];
+  isLight: boolean = false;
 
-  constructor() { }
+  constructor(private _helper: HelperService) { }
 
   ngOnInit(): void {
+    this._helper.isLightTheme.subscribe((isLight: boolean) => {
+      this.isLight = isLight;
+    });
     this.contactsList = [
       {
         name: 'gmail',
@@ -118,6 +123,7 @@ export class SkillSetComponent implements OnInit {
       },
       {
         name: 'github',
+        isDarkLogo: true,
         url: 'https://github.com/devanshhu'
       },
       {
@@ -130,8 +136,7 @@ export class SkillSetComponent implements OnInit {
 
   private populateContactMe() {
     let i = 0;
-    debugger;
-    interval(800).pipe(
+    interval(this._helper.isMobile ? 0 : 800).pipe(
       take(4),
       tap((i) => this.contactVias[i] = this.contactsList[i++])
     ).subscribe(

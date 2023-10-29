@@ -9,6 +9,7 @@ import { Wireframe } from 'src/helpers/Brains/Brain';
 })
 export class BrainComponentComponent implements OnInit {
 
+    isMobile = false;
     constructor(private helper: HelperService) { }
 
     brainData: any[] = [
@@ -6743,7 +6744,7 @@ export class BrainComponentComponent implements OnInit {
     ];
     ngOnInit(): void {
         const brain = new Wireframe(document.getElementById("brain-container"), this.brainData[0].paths, this.helper);
-
+        this.isMobile = this.helper.isMobile;
     }
 
 }

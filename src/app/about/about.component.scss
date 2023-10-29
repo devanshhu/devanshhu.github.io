@@ -11,6 +11,10 @@
 	animation: blinker 1s infinite;
 }
 
+.skills {
+	min-height: 70vh;
+}
+
 @keyframes blinker {
 	60% {
 		opacity: 0;

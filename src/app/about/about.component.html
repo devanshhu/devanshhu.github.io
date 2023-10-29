@@ -1,41 +1,13 @@
-<div class=" w-4/5 about pt-20 md:pt-5 mx-auto mt-4 flex flex-row md:flex-row pt-64">
-	<!-- <div class="w-full md:w-full h-96 border-b-lg flex flex-row items-start justify-start" > -->
-		<!-- <div class="header w-full md:w-1/2 h-20 text-red-500 pl-4 md:pl-16 font-bold text-4xl tracking-wider">
-			Hey There !!
-		</div>
-		<div class="content pl-4 pr-4 md:pl-16 w-full text-black dark:text-white text-xl tracking-wide text-justify dark:text-gray-50">
-			{{ introduction }} <span class="text-xl typewriter" *ngIf="showBlinker">|</span> 
-		</div>
-		<br> -->
-		<!-- <div class="content pl-4 pr-4 md:pl-16 w-full text-black text-xl tracking wide text-justify dark:text-gray-50">
-			{{academic}}<span class="text-3xl typewriter" *ngIf="showBlinker">|</span>   
-		</div> -->
-		<!-- <div class="w-full contact mt-8 pl-4 pr-4 md:pl-16 hidden md:flex md:flex-col">
-			<div class="w-full text-2xl text-red-500 font-bold dark:text-gray-50 " *ngIf="contactVias && contactVias.length > 0">
-				Contact Me
-			</div>
-			<div class="flex mt-2 ml-2 md:ml-4 md:mt-8 flex-wrap">
-				<span @popout *ngFor="let contact of contactVias" class="cursor-pointer mr-16 md:mr-12">
-					<a [attr.href]="contact.url">
-					<img class=" h-10 w-10 "[attr.src]="'assets/contact/' + contact.name + ('') + '.svg'">
-				</a>
-				</span>
-			</div>
-
-		</div> -->
-
-
-	<!-- </div> -->
-
+<div class="w-6/6 md:w-4/5 about md:pt-20 pt-5 md:mx-auto mt-0 flex flex-col-reverse md:flex-row ">
 	<!-- Education Column -->
-	
-	<section class="w-1/5 skills border-l-3 border-gray-100 mt-12 md:mt-0 mx-auto">
+	<section class="w-2/12 md:w-1/5 skills border-l-3 border-gray-100 md:mt-12 mt-0 sm:mt-0 ml-2 md:mx-auto">
 		<div class="h-full pr-4 flex flex-col align-center">
 			<div class="text-4xl text-red-500 font-bold dark:text-white tracking-wider mb-6" *ngIf="skillSet && skillSet.length > 0">
 				Education
 			</div>
 
-			<div @appearFromBottom *ngFor=" let skill of skillSet;let even = even; let odd = odd;" class="card w-96 h-24 bg-gray-700 md:bg-gray-50 dark:bg-gray-800 shadow-xl rounded-lg flex align-center flex-col border-b-4 mb-10"
+			<div @appearFromBottom *ngFor=" let skill of skillSet;let even = even; let odd = odd;" 
+			class="card w-80 ml-4 md:ml-0 md:w-96 h-24 bg-gray-700 md:bg-gray-50 dark:bg-gray-800 shadow-xl rounded-lg flex align-center flex-col border-b-4 mb-10"
 			[ngClass]="['border-' + skill.colorName, odd ? 'md:float-right':'']" 
 			>
 				<div class="row flex align-center">
@@ -72,4 +44,5 @@
 		</div>
 	</div> -->
 
-	<app-brain-component class="w-4/5"></app-brain-component>
+	<app-brain-component class=" w-5/6 mx-auto md:mx-0 md:w-4/5"></app-brain-component>
+	</div>

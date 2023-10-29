@@ -1,23 +1,23 @@
 <div class="flex flex-col w-full">
-    <div class="text-4xl text-red-500 dark:text-white pl-6 ml-6 mb-24">
+    <div class="text-xl md:text-4xl text-red-500 dark:text-white pl-2 md:pl-6 md:ml-6 mt-12 mb-12 md:mb-24">
         Side Projects ? Here you go !
     </div>
-<section *ngFor="let skill of skillsets;let index = index; let odd =odd" class=" flex flex-row pb-48" >
-    <div class="flex justify-around w-11/12" [ngClass]="odd ? 'flex-row' : 'flex-row-reverse'">
+<section *ngFor="let skill of skillsets;let index = index; let odd =odd" class=" flex flex-col md:flex-row pb-24 md:pb-48" >
+    <div class="flex flex-col justify-around w-full md:w-11/12" [ngClass]="odd ? 'md:flex-row' : 'md:flex-row-reverse'">
         <div [id]="'container' + index" class="flex items-center justify-center shadow-2xl shadow-inner">
-            <div class="rounded-md shadow-2xl">
+            <div class="rounded-md shadow-2xl mx-auto">
                 <img [src]="skill.config.imgUrl" class="card rounded-md">
             </div>
         </div>
         
         <!-- <app-laptop-map [containerElement]="'container' + index"  [mapConfig]="skill.config">
         </app-laptop-map> -->
-        <div class="flex flex-col justify-center w-96"  >
+        <div class="flex flex-col justify-center w-72 md:w-96"  >
             
-            <div class="text-gray-900 text-2xl dark:text-white"> 
+            <div class="text-gray-900 text-lg md:text-2xl mt-6 md:mt-0 pl-4 md:pl-0 dark:text-white"> 
                 {{ skill.title }}
             </div>
-            <div class="text-gray-600 text-xl dark:text-gray-200 pt-4 pl-6 flex flex-col">
+            <div class="text-gray-600 text-md md:text-xl dark:text-gray-200 pt-4 pl-6 flex flex-col">
                 {{skill.description}}
             </div>
         </div>
@@ -28,12 +28,14 @@
     <div class="w-full text-4xl text-red-500 font-bold dark:text-gray-50 " *ngIf="contactVias && contactVias.length > 0">
         Contact Me
     </div>
-    <div class="flex mt-2 ml-2 md:ml-4 md:mt-8 flex-wrap">
-        <span *ngFor="let contact of contactVias" class="cursor-pointer mr-16 md:mr-12">
+    <div class="flex mt-12 ml-2 md:ml-4 md:mt-8 md:flex-wrap justify-around md:justify-start">
+        <div *ngFor="let contact of contactVias" class="flex items-center cursor-pointer mr-6 md:mr-12">
             <a [attr.href]="contact.url">
-            <img class=" h-10 w-10 "[attr.src]="'assets/contact/' + contact.name + ('') + '.svg'">
+            <img class="w-12 md:h-10 md:w-10 "[attr.src]="'assets/contact/' + contact.name +
+            (contact.isDarkLogo && !isLight ? '_dark' : '' ) +
+            '.svg'">
         </a>
-        </span>
+        </div>
     </div>
 
 </div>
