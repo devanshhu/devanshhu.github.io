@@ -26,7 +26,7 @@ export class Chandrayan {
   planet!: THREE.Mesh<THREE.SphereGeometry, THREE.Material>;
   point!: THREE.Mesh<THREE.SphereGeometry, any>;
   group!: THREE.Group;
-  textureLoader: GLTFLoader;
+  // textureLoader: GLTFLoader;
   rocket: Rocket;
   showRotation: any = false;
   renderScene!: RenderPass;
@@ -54,7 +54,7 @@ export class Chandrayan {
   constructor(serviceInstance: any) {
     this.service = serviceInstance;
     this.isMobile = this.service.isMobile;
-    this.textureLoader = new GLTFLoader();
+    // this.textureLoader = new GLTFLoader();
 
     this.rocket = new Rocket();
 
@@ -270,7 +270,7 @@ export class Chandrayan {
     // this.scene.add(this.point);
   }
   addAmbientLight() {
-    const ambient = new THREE.AmbientLight(0x555555, 16);
+    const ambient = new THREE.AmbientLight(0x555555, 24);
     this.scene.add(ambient);
   }
 
@@ -290,15 +290,15 @@ export class Chandrayan {
   setRocket() {
     // this.group.rotation.y = Math.PI + Math.PI / 8;
     // this.group.rotation.x = Math.PI / 8;
-    this.textureLoader.load("assets/three/models/rocket/scene.gltf", (model) => {
-      const mesh = model.scene;
-      mesh.scale.set(0.005, 0.005, 0.005);
-      mesh.position.set(0, 0, 1);
-      mesh.rotation.x = Math.PI / 2;
-      mesh.rotation.z = -Math.PI / 6;
-      // mesh.position.z = 0.8;
-      this.scene.add(mesh);
-    })
+    // this.textureLoader.load("assets/three/models/rocket/scene.gltf", (model) => {
+    //   const mesh = model.scene;
+    //   mesh.scale.set(0.005, 0.005, 0.005);
+    //   mesh.position.set(0, 0, 1);
+    //   mesh.rotation.x = Math.PI / 2;
+    //   mesh.rotation.z = -Math.PI / 6;
+    //   // mesh.position.z = 0.8;
+    //   this.scene.add(mesh);
+    // })
     this.rocket.mesh.scale.set(0.0001, 0.0001, 0.0001);
     // rotation y = 0.04 & z = pi/2 for rotating rocket
     // this.rocket.mesh.rotation.y = 0.04;

@@ -145,4 +145,8 @@ export class SkillSetComponent implements OnInit {
     );
   }
 
+  toChandrayan() {
+    this._helper.toChandrayan.next();
+  }
+
 }

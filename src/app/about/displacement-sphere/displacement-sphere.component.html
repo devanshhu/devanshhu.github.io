@@ -1,0 +1,20 @@
+<!-- <div class="overlay" *ngIf="false"></div> -->
+<div class="info-text" id="infoContainer"
+[ngClass]="hideBackground ? 'bg-transparent' : 'bg-black'"
+>
+  <div id="textWrapper" class="text-wrapper">
+    <div id="heading" class="heading-wrapper">
+      <div class="heading-text">
+        {{ headingText }}
+      </div>
+      <app-typewriter
+        *ngIf="(!isMobile || showBody) && !isComplete"
+        [fontSize]="isMobile ? '4.4em' : '6em'"
+      ></app-typewriter>
+    </div>
+    <div id="bodyText" class="body-wrapper">
+      {{ bodyText }}
+    </div>
+  </div>
+</div>
+<div id="canvas"></div>

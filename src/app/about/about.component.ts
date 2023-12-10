@@ -5,7 +5,6 @@ import { interval, } from 'rxjs';
 import { take, tap, switchMap } from 'rxjs/operators';
 
 import { HelperService } from '../helper.service';
-import { Chandrayan } from 'src/helpers/chandrayan/Chandrayan';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',

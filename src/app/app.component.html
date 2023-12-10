@@ -1,11 +1,15 @@
 <div class=" bg-cover bg-gradient-to-r from-red-100 via-green-100 to-blue-100 dark:bg-gradient-to-r dark:from-gray-700 dark:via-gray-900 dark:to-black" >
 <div class=" md:h-full w-full"  > 
-	<app-header class=" mt-0 pt-0 w-full top-0 " (navigateTo)="navigateToPage($event)"></app-header>
+	<app-header class=" mt-0 pt-0 w-full top-0 "  (navigateTo)="navigateToPage($event)"></app-header>
 </div>
 <div >
 
-	<app-about ></app-about>
+	<app-displacement-sphere
+		*ngIf="showChandrayan"
+	></app-displacement-sphere>
+	<app-about *ngIf="!showChandrayan"></app-about> 
 	<section 
+	*ngIf="!showChandrayan"
 	class="skills-section">
 	<app-skill-set 
 	*ngIf="showSkillset"

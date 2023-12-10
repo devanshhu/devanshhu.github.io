@@ -31,6 +31,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this._helper.toChandrayan.subscribe((val: any) => {
+      this.menuSelectionChange('chandrayan');
+    })
     this._helper.isLightTheme.subscribe((isLight: boolean) => {
       this.lightTheme = isLight;
     });
@@ -44,14 +47,14 @@ export class HeaderComponent implements OnInit {
         darkThemeLogo: 'assets/themes/dark/dark-home.svg',
         isClickable: true
       },
-      // {
-      //   id: '2',
-      //   name: 'Chandrayan',
-      //   path: 'chandrayan',
-      //   lightThemeLogo: 'assets/themes/light/light-technologies.svg',
-      //   darkThemeLogo: 'assets/themes/dark/dark-technologies.svg',
-      //   isClickable: false
-      // },
+      {
+        id: '2',
+        name: 'Chandrayan',
+        path: 'chandrayan',
+        lightThemeLogo: 'assets/themes/light/light-technologies.svg',
+        darkThemeLogo: 'assets/themes/dark/dark-technologies.svg',
+        isClickable: true
+      },
       // {
       //   id: '3',
       //   name: 'Blog',

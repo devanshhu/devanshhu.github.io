@@ -61,8 +61,6 @@ export class TechnologiesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const chandrayaan = new Chandrayan(this._helper);
-    return;
     this.scrollSubject.pipe(throttleTime(1000)).subscribe(res => {
       this.currentIndex += 2;
       this.animateFromRight = res;

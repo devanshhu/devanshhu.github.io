@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
     title = 'portfolio-v2';
     public lightTheme: boolean = true;
     showSkillset: boolean = false;
+    showChandrayan: boolean = false;
     constructor(private _helper: HelperService, private _router: Router) {
 
     }
@@ -32,6 +33,9 @@ export class AppComponent implements OnInit {
 
             }
         });
+        this._helper.toChandrayan.subscribe((val: any) => {
+            this.navigateToPage('chandrayan');
+        })
 
         setTimeout(() => {
             this.showSkillset = true;
@@ -40,7 +44,11 @@ export class AppComponent implements OnInit {
     }
 
     public navigateToPage(path: string) {
-
+        if (path === 'chandrayan') {
+            this.showChandrayan = true;
+        } else {
+            this.showChandrayan = false;
+        }
         this._router.navigate([path], { skipLocationChange: true });
 
 
